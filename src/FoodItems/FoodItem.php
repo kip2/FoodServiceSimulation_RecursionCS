@@ -8,6 +8,7 @@ abstract class FoodItem {
     private float $price;
 
     public static function getCategory() {
+        // todo: 何を行う関数？
 
     }
 
