@@ -11,10 +11,17 @@ class Cashier extends Employee {
     }
 
 
+    // orderを受け取り、注文票を返す
     public function generateOrder(Restaurant $restaurant , string ...$categories ) : FoodOrder {
-        // todo: エラーを除く最低限のコード
-        $order = new FoodOrder();
+        echo "{$this->getName()} received the order.\n";
+        $order = new FoodOrder($categories);
         return $order;
+    }
+    
+    public function generateInvoice(FoodOrder $order): Invoice{
+        $invoice = new Invoice();
+
+        return $invoice;
     }
 
 

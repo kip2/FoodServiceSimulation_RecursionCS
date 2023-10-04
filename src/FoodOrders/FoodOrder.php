@@ -9,5 +9,17 @@ class FoodOrder {
 
     private Timestamp $orderTime;
 
+    public function __construct(array $foodItems) {
+        $this->items = $foodItems;
+        $this->orderTime = new Timestamp();
+    }
+    
+    public function getItems():array {
+        return $this->items;
+    }
+
+    public function getOrderTime(): Timestamp{
+        return $this->orderTime;
+    }
 
 }

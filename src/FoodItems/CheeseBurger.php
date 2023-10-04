@@ -3,7 +3,7 @@
 require 'FoodItem.php';
 
 class CheeseBurger extends FoodItem {
-    private int $cookingTime = 10;
+    private int $cookingTime = 2;
     public function __construct() {
         $this->name = __CLASS__;
         $this->description = "This is CheeseBurger.";

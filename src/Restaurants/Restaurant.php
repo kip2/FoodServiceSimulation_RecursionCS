@@ -1,6 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../Invoices/Invoice.php';
+require_once __DIR__ . '/../FoodOrders/FoodOrder.php';
+require_once __DIR__ . '/../Persons/Employees/Employee.php';
+require_once __DIR__ . '/../Persons/Employees/Cashier.php';
+require_once __DIR__ . '/../Persons/Employees/Chef.php';
 
 class Restaurant {
     /** @var FoodItem[] */
@@ -40,11 +44,18 @@ class Restaurant {
      * @psalm-param array<string, int> $categories
      */
     public function order(array $categories): Invoice{
+
+        // cashierを探して、注文表を作成するよう依頼
+        $cashier = $this->getCashier();
+        $foodOrder = $cashier->generateOrder($this, $categories);
+
         // シェフを探して、注文を捌くように依頼
         $chef = $this->getChef();
-        // cashirを探して、注文を捌くように依頼
-        $cashir = $this->getCashier();
-        $invoice = new Invoice();
+        echo $chef->prepareFood($foodOrder);
+
+        // cahierに請求書の発行を依頼
+        $invoice = $cashier->generateInvoice($foodOrder);
+
         return $invoice;
     }
 

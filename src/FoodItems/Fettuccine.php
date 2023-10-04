@@ -1,6 +1,6 @@
 <?php
 class Fettuccine extends FoodItem {
-    private int $cookingTime = 17;
+    private int $cookingTime = 4;
 
     public function __construct() {
         $this->name = __CLASS__;

@@ -9,13 +9,25 @@ class Chef extends Employee {
         parent::__construct($name, $age, $address, $employeeID, $salary);
     }
 
+    // public function prepareOrder(Invoice $invoice, array $categories): Invoice {
+    //     foreach($categories as $category) {
+    //         $invoice->addEstimatedTimeInMinutes($this->prepareFood($category));
+    //     }
+    //     return $invoice;
+    // }
+
+    // 調理をして、かかった時間を報告する
+
     public function prepareFood(FoodOrder $order): string {
-    // todo: 何をするメソッドかを確認する
-        // todo: 必須要件
-        // todo: 食材を加工・調理することを表す
-        return "";
+        $totalTime = 0;
+        foreach ($order->getItems() as $item) {
+            echo "{$this->name} was cooking {$item->getName()}.\n";
+            $totalTime += $item->getCookingTime();
+        }
+        return "{$this->name} took {(string)$totalTime} minutes to cook.\n";
     }
 
+    // 自己紹介用
     public function introduction() :string {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }

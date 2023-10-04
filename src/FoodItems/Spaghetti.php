@@ -2,7 +2,7 @@
 class Spaghetti extends FoodItem {
     // private float $price = 15.0;
 
-    private int $cookingTime = 16;
+    private int $cookingTime = 3;
 
     public function __construct() {
         $this->name = __CLASS__;
