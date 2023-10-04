@@ -20,9 +20,13 @@ class Chef extends Employee {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }
 
-    // 名前を返す
-    public function __toString(){
-        // return __CLASS__;
-        return $this->getName();
+    public function getClassName() {
+        return __CLASS__;
     }
+
+    // クラスネームを返す
+    // public function __toString(){
+    //     return __CLASS__;
+    //     // return $this->getName();
+    // }
 }

@@ -40,9 +40,18 @@ class Restaurant {
      * @psalm-param array<string, int> $categories
      */
     public function order(array $categories): Invoice{
-        // todo: とりあえずエラーなしのコード
+        // シェフを探して、注文を捌くように依頼
+        // cashirを探して、注文を捌くように依頼
         $invoice = new Invoice();
         return $invoice;
+    }
+
+    private function getChef() : Chef{
+        foreach ($this->employees as $employee) {
+            if ($employee->getClassName() == "Chef") {
+                return $employee;
+            }
+        }
     }
 
     public function hasMenu(string $category): bool {
