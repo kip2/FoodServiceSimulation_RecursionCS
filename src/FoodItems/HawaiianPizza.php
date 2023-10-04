@@ -11,11 +11,8 @@ class HawaiianPizza extends FoodItem {
     public function getCookingTime():int {
         return $this->cookingTime;
     }
-    public function getPrice() :float{
-        return $this->price;
-    }
 
     public function __toString(){
-        return __CLASS__;
+        return $this->getName();
     }
 }

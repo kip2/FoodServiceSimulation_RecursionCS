@@ -11,12 +11,7 @@ class Fettuccine extends FoodItem {
         return $this->cookingTime;
     }
 
-    public function getPrice() : float{
-        return $this->price;
-    }
-
-    // todo: 中身は何がいる？
     public function __toString(){
-        return __CLASS__;
+        return $this->getName();
     }
 }
