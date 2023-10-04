@@ -4,29 +4,44 @@
 // namespace FoodService;
 
 require_once __DIR__ . '/../Person.php';
+require_once __DIR__ . '/../../Invoices/Invoice.php';
 
 class Customer extends Person {
-    private $order;
+    private $interestedCategories;
 
-    public function __construct($name, $age, $address, $order) {
+    public function __construct($name, $age, $address, $interestedCategories) {
         $this->name = $name;
         $this->age = $age;
         $this->address = $address;
-        $this->order = $order;
+        $this->interestedCategories = $interestedCategories;
 
     }
+
+    // 食べたいものからレストランで注文したいメニューを生成する
     public function interestedCategories(Restaurant $restaurant): array {
-        // todo: エラーを解消する最低限のコード
-        return ["", ""];
+        $orderCategories = [];
+        foreach ($this->interestedCategories as $key => $value) {
+            if ($restaurant->hasMenu($key)) {
+                for ($i = 0; $i < $value; $i++) {
+                    array_push($orderCategories, $key);
+                }
+            }
+        }
+        return $orderCategories;
+    }
+
+    // restaurant側にorder処理を委譲
+    public function order(Restaurant $restaurant): Invoice{
+        return $restaurant->order($this->interestedCategories);
     }
 
     public function introduction() {
         $return_string = "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. ";
 
-        $return_string .= "My order is [ ";
+        $return_string .= "My interestedCategories is [ ";
 
-        // orderをループして処理
-        foreach ($this->order as $key => $value) {
+        // interestedCategoriesをループして処理
+        foreach ($this->interestedCategories as $key => $value) {
             $return_string .= "{$key}:{$value} ";
         }
 

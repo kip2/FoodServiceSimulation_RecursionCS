@@ -35,42 +35,23 @@ date_default_timezone_set("Asia/Tokyo");
 
 // --------------------------------------------------
 
-$cheeseBurger = new CheeseBurger();
-$fettuccine = new Fettuccine();
-$hawaiianPizza = new HawaiianPizza();
-$spaghetti = new Spaghetti();
-
-echo $cheeseBurger;
-echo "\n";
-echo $fettuccine;
-echo "\n";
-echo $hawaiianPizza;
-echo "\n";
-echo $spaghetti;
-echo "\n";
-
 // employee test
-$Inavah = new Chef("Inayah Lozano", 40, "Osaka", 1, 30);
-$Nadia = new Cashier("Nadia Valentine", 21, "Tokyo", 1, 20);
-
-echo $Inavah->introduction();
-echo $Nadia->introduction();
 
 // restaurant
 $menu = [
-    $cheeseBurger,
-    $fettuccine,
-    $hawaiianPizza,
-    $spaghetti
+    new CheeseBurger(),
+    new Fettuccine(),
+    new HawaiianPizza(),
+    new Spaghetti()
 ];
 
 $employees = [
-    $Inavah,
-    $Nadia
+    new Chef("Inayah Lozano", 40, "Osaka", 1, 30),
+    new Cashier("Nadia Valentine", 21, "Tokyo", 1, 20)
 ];
 
 $saizeriya = new Restaurant($menu, $employees);
-echo $saizeriya->introduction();
+// echo $saizeriya->introduction();
 
 $interestedTastesMap = [
     "Margherita" => 1,
@@ -78,23 +59,27 @@ $interestedTastesMap = [
     "Spaghetti" => 1,
 ];
 
-// echo $interestedTastesMap["Margherita"];
-// echo $interestedTastesMap["CheeseBurger"];
-// echo $interestedTastesMap["Spaghetti"];
-
 $Tom = new Customer("Tom", 20, "Saitama", $interestedTastesMap);
 
 echo $Tom->introduction();
 
-$timestamp = new Timestamp();
+$Tom->interestedCategories($saizeriya);
+echo "test";
 
-echo $timestamp;
-echo "\n";
-echo $timestamp->getElapsedTime(time());
-echo $timestamp->getTime();
-echo "\n";
+// $invoice = $Tom->order($saizeriya);
+// $invoice->printInvoice();
 
-sleep(5);
+// timestamp
 
-echo date("i:s", ($timestamp->getElapsedTime(time())));
+// $timestamp = new Timestamp();
+
+// echo $timestamp;
+// echo "\n";
+// echo $timestamp->getElapsedTime(time());
+// echo $timestamp->getTime();
+// echo "\n";
+
+// sleep(5);
+
+// echo date("i:s", ($timestamp->getElapsedTime(time())));
 // echo (string)$timestamp->getElapsedTime(time());
