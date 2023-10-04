@@ -10,7 +10,7 @@ class Timestamp {
     
     // インスタンス生成時の時間を取得する
     public function getTime() : string{
-        return date("Y-m-d H:i:s", $this->generated_time);
+        return date("Y/m/d H:i:s", $this->generated_time);
     }
 
     // 引数の時刻と、インスタンス生成時の時刻の差を文字列にして返す

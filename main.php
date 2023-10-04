@@ -18,8 +18,6 @@ require_once 'src/FoodItems/HawaiianPizza.php';
 require_once 'src/FoodItems/Spaghetti.php';
 
 // employee
-// require_once 'src/Persons/Person.php';
-// require_once 'src/Persons/Employees/Employee.php';
 require_once 'src/Persons/Employees/Cashier.php';
 require_once 'src/Persons/Employees/Chef.php';
 require_once 'src/Restaurants/Restaurant.php';
@@ -37,8 +35,6 @@ date_default_timezone_set("Asia/Tokyo");
 
 // --------------------------------------------------
 
-// employee test
-
 // restaurant
 $menu = [
     new CheeseBurger(),
@@ -53,7 +49,6 @@ $employees = [
 ];
 
 $saizeriya = new Restaurant($menu, $employees);
-// echo $saizeriya->introduction();
 
 $interestedTastesMap = [
     "Margherita" => 1,
@@ -63,27 +58,5 @@ $interestedTastesMap = [
 
 $Tom = new Customer("Tom", 20, "Saitama", $interestedTastesMap);
 
-echo $Tom->introduction();
-
-
-// $Tom->interestedCategories($saizeriya);
-// echo "test";
-
 $invoice = $Tom->order($saizeriya);
 $invoice->printInvoice();
-echo "test";
-
-// timestamp
-
-// $timestamp = new Timestamp();
-
-// echo $timestamp;
-// echo "\n";
-// echo $timestamp->getElapsedTime(time());
-// echo $timestamp->getTime();
-// echo "\n";
-
-// sleep(5);
-
-// echo date("i:s", ($timestamp->getElapsedTime(time())));
-// echo (string)$timestamp->getElapsedTime(time());

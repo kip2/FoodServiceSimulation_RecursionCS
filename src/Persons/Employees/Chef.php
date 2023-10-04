@@ -21,10 +21,10 @@ class Chef extends Employee {
     public function prepareFood(FoodOrder $order): string {
         $totalTime = 0;
         foreach ($order->getItems() as $item) {
-            echo "{$this->name} was cooking {$item->getName()}.\n";
+            echo "{$this->name} was cooking {$item}.\n";
             $totalTime += $item->getCookingTime();
         }
-        return "{$this->name} took {(string)$totalTime} minutes to cook.\n";
+        return "{$this->name} took {$totalTime} minutes to cook.\n";
     }
 
     // 自己紹介用

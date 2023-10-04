@@ -20,7 +20,7 @@ class Invoice {
     }
 
     public function getOrderTime() {
-        return $this->orderTime;
+        return $this->orderTime->getTime();
     }
 
     public function addPrice(float $price) {
@@ -32,9 +32,11 @@ class Invoice {
     }
 
     public function printInvoice() : void{
+        $date = $this->getOrderTime();
+        $price = $this->getFinalPrice();
         echo "--------------------------------------------------\n";
-        echo "Date: {$this->getOrderTime()}\n";
-        echo "Final Price: ${(string)$this->getFinalPrice()}\n";
+        echo "Date: {$date}\n";
+        echo "Final Price: \$", number_format($price, 2), "\n";
         echo "--------------------------------------------------\n";
         return;
     }
