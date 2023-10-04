@@ -32,14 +32,20 @@ $hawaiianPizza = new HawaiianPizza();
 $spaghetti = new Spaghetti();
 
 echo $cheeseBurger;
+echo "\n";
 echo $fettuccine;
+echo "\n";
 echo $hawaiianPizza;
+echo "\n";
 echo $spaghetti;
+echo "\n";
 
 // employee test
 $Inavah = new Chef("Inayah Lozano", 40, "Osaka", 1, 30);
 $Nadia = new Cashier("Nadia Valentine", 21, "Tokyo", 1, 20);
 
+echo $Inavah->introduction();
+echo $Nadia->introduction();
 
 // restaurant
 $menu = [
@@ -55,5 +61,6 @@ $employees = [
 ];
 
 $saizeriya = new Restaurant($menu, $employees);
+echo $saizeriya->introduction();
 
 echo "hello";

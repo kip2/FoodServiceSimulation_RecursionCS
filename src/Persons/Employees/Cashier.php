@@ -10,9 +10,21 @@ class Cashier extends Employee {
         parent::__construct($name, $age, $address, $employeeID, $salary);
     }
 
+
     public function generateOrder(Restaurant $restaurant , string ...$categories ) : FoodOrder {
         // todo: エラーを除く最低限のコード
         $order = new FoodOrder();
         return $order;
+    }
+
+
+    // 説明用のクラス
+    public function introduction() :string {
+        return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
+    }
+
+    // クラスネームを文字列で返す
+    public function __toString(){
+        return __CLASS__;
     }
 }

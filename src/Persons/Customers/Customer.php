@@ -11,4 +11,9 @@ class Customer extends Person {
         return ["", ""];
     }
 
+    // クラスネームを文字列で返す
+    public function __toString(){
+        return __CLASS__;
+    }
+
 }

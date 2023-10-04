@@ -13,4 +13,12 @@ class Chef extends Employee {
     public function prepareFood(FoodOrder $order): string {
         return "";
     }
+    public function introduction() :string {
+        return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
+    }
+
+    // クラスネームを文字列で返す
+    public function __toString(){
+        return __CLASS__;
+    }
 }
