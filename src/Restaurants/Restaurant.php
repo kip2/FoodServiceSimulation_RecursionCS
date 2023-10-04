@@ -18,6 +18,7 @@ class Restaurant {
         $this->employees = $employees;
     }
 
+    // 自己紹介用
     public function introduction() {
         $return_string = "Hi, menu are [ ";
 
@@ -34,9 +35,7 @@ class Restaurant {
         }
 
         $return_string .= "]";
-
         $return_string .= ".\n";
-
         return $return_string;
     }
 
@@ -60,6 +59,7 @@ class Restaurant {
     }
 
 
+    // 従業員リストの先頭にいるシェフを呼びだす
     private function getChef() : Chef{
         foreach ($this->employees as $employee) {
             if ($employee->getClassName() == "Chef") {
@@ -68,6 +68,7 @@ class Restaurant {
         }
     }
 
+    // 従業員リストの先頭にいるレジ係を呼ぶ
     private function getCashier(): Cashier{
         foreach ($this->employees as $employee) {
             if ($employee->getClassName() == "Cashier") {
@@ -76,8 +77,8 @@ class Restaurant {
         }
     }
 
+    // menuの中にあるかどうかを判定
     public function hasMenu(string $category): bool {
-        // menuの中にあるかどうかを判定
         foreach($this->menus as $menu) {
             if ($menu == $category) {
                 return True;

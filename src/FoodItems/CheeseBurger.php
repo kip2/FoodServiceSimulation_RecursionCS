@@ -15,6 +15,7 @@ class CheeseBurger extends FoodItem {
         return $this->cookingTime;
     }
 
+    // 名前を表示する
     public function __toString(){
         return $this->getName();
     }

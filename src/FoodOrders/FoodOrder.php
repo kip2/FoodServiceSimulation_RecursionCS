@@ -10,7 +10,6 @@ class FoodOrder {
     private Timestamp $orderTime;
 
     public function __construct(array $foodItems) {
-        // $this->items = $foodItems;
         $this->setItemArray($foodItems);
         $this->orderTime = new Timestamp();
     }

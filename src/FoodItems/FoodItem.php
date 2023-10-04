@@ -25,10 +25,6 @@ abstract class FoodItem {
         return $this->price;
     }
 
-    public static function getCategory() {
-        // todo: 何を行う関数？
-
-    }
-
-
+    // public static function getCategory() {
+    // }
 }

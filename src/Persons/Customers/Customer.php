@@ -36,6 +36,7 @@ class Customer extends Person {
         return $restaurant->order($orderCategories);
     }
 
+    // 自己紹介用
     public function introduction() {
         $return_string = "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. ";
 
@@ -53,7 +54,6 @@ class Customer extends Person {
 
     // 名前を文字列で返す
     public function __toString(){
-        // return __CLASS__;
         return $this->getName();
     }
 

@@ -13,6 +13,7 @@ class HawaiianPizza extends FoodItem {
         return $this->cookingTime;
     }
 
+    // 名前をかえす
     public function __toString(){
         return $this->getName();
     }

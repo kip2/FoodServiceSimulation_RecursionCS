@@ -11,7 +11,6 @@ class Cashier extends Employee {
     }
 
     // orderを受け取り、注文票を返す
-    // public function generateOrder(Restaurant $restaurant , string ...$categories ) : FoodOrder {
     public function generateOrder(Restaurant $restaurant , array $categories ) : FoodOrder {
         echo "{$this->getName()} received the order.\n";
         $order = new FoodOrder($categories);

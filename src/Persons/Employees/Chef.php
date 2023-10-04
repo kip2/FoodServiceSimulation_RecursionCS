@@ -9,15 +9,7 @@ class Chef extends Employee {
         parent::__construct($name, $age, $address, $employeeID, $salary);
     }
 
-    // public function prepareOrder(Invoice $invoice, array $categories): Invoice {
-    //     foreach($categories as $category) {
-    //         $invoice->addEstimatedTimeInMinutes($this->prepareFood($category));
-    //     }
-    //     return $invoice;
-    // }
-
     // 調理をして、かかった時間を報告する
-
     public function prepareFood(FoodOrder $order): string {
         $totalTime = 0;
         foreach ($order->getItems() as $item) {
