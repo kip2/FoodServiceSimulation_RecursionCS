@@ -23,9 +23,13 @@ class Cashier extends Employee {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }
 
+    // クラスネームを返す
+    public function getClassName() {
+        return __CLASS__;
+    }
+
     // 名前を返す
     public function __toString(){
-        // return __CLASS__;
         return $this->getName();
     }
 }

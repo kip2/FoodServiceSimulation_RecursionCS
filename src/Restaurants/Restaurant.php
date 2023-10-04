@@ -41,7 +41,9 @@ class Restaurant {
      */
     public function order(array $categories): Invoice{
         // シェフを探して、注文を捌くように依頼
+        $chef = $this->getChef();
         // cashirを探して、注文を捌くように依頼
+        $cashir = $this->getCashier();
         $invoice = new Invoice();
         return $invoice;
     }
@@ -49,6 +51,14 @@ class Restaurant {
     private function getChef() : Chef{
         foreach ($this->employees as $employee) {
             if ($employee->getClassName() == "Chef") {
+                return $employee;
+            }
+        }
+    }
+
+    private function getCashier(): Cashier{
+        foreach ($this->employees as $employee) {
+            if ($employee->getClassName() == "Cashier") {
                 return $employee;
             }
         }

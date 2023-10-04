@@ -63,7 +63,8 @@ $Tom = new Customer("Tom", 20, "Saitama", $interestedTastesMap);
 
 echo $Tom->introduction();
 
-$Tom->interestedCategories($saizeriya);
+
+// $Tom->interestedCategories($saizeriya);
 echo "test";
 
 // $invoice = $Tom->order($saizeriya);

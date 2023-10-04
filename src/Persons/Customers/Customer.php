@@ -32,7 +32,8 @@ class Customer extends Person {
 
     // restaurant側にorder処理を委譲
     public function order(Restaurant $restaurant): Invoice{
-        return $restaurant->order($this->interestedCategories);
+        $orderCategories = $this->interestedCategories($restaurant);
+        return $restaurant->order($orderCategories);
     }
 
     public function introduction() {
