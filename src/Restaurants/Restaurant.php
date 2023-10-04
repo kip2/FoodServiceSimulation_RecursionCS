@@ -13,9 +13,7 @@ class Restaurant {
     }
 
     public function introduction() {
-        $return_string = "";
-
-        $return_string .= "Hi, menu are [ ";
+        $return_string = "Hi, menu are [ ";
 
         // メニューを連結する
         foreach ($this->menus as $menu) {
@@ -26,7 +24,7 @@ class Restaurant {
         $return_string .= "Staff are [ ";
         // staffを連結する
         foreach ($this->employees as $employee) {
-            $return_string .= $employee . " ";
+            $return_string .= $employee->getName() . ". ";
         }
 
         $return_string .= "]";

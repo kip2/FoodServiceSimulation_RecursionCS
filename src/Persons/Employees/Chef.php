@@ -11,8 +11,11 @@ class Chef extends Employee {
     }
 
     public function prepareFood(FoodOrder $order): string {
+        // todo: 必須要件
+        // todo: 食材を加工・調理することを表す
         return "";
     }
+
     public function introduction() :string {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }
