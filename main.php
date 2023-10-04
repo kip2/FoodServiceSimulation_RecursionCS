@@ -25,6 +25,14 @@ require_once 'src/Persons/Employees/Chef.php';
 require_once 'src/Restaurants/Restaurant.php';
 require_once 'src/Persons/Customers/Customer.php';
 
+// timestamp
+require_once 'src/Other/Timestamp.php';
+
+// --------------------------------------------------
+
+// タイムゾーン設定
+date_default_timezone_set("Asia/Tokyo");
+
 // --------------------------------------------------
 
 $cheeseBurger = new CheeseBurger();
@@ -77,3 +85,16 @@ $interestedTastesMap = [
 $Tom = new Customer("Tom", 20, "Saitama", $interestedTastesMap);
 
 echo $Tom->introduction();
+
+$timestamp = new Timestamp();
+
+echo $timestamp;
+echo "\n";
+echo $timestamp->getElapsedTime(time());
+echo $timestamp->getTime();
+echo "\n";
+
+sleep(5);
+
+echo date("i:s", ($timestamp->getElapsedTime(time())));
+// echo (string)$timestamp->getElapsedTime(time());

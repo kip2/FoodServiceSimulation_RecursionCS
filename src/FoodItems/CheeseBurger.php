@@ -8,12 +8,4 @@ class CheeseBurger extends FoodItem {
     public function __toString(){
         return __CLASS__;
     }
-
-    // public function test() {
-    //     echo "hello";
-    // }
-
 }
-
-// $burger = new CheeseBurger();
-// echo $burger;
