@@ -21,8 +21,9 @@ class Employee extends Person {
 
     }
 
-    // クラスネームを文字列で返す
+    // 名前を返す
     public function __toString(){
-        return __CLASS__;
+        // return __CLASS__;
+        return $this->getName();
     }
 }

@@ -23,6 +23,7 @@ require_once 'src/FoodItems/Spaghetti.php';
 require_once 'src/Persons/Employees/Cashier.php';
 require_once 'src/Persons/Employees/Chef.php';
 require_once 'src/Restaurants/Restaurant.php';
+require_once 'src/Persons/Customers/Customer.php';
 
 // --------------------------------------------------
 
@@ -63,4 +64,16 @@ $employees = [
 $saizeriya = new Restaurant($menu, $employees);
 echo $saizeriya->introduction();
 
-echo "hello";
+$interestedTastesMap = [
+    "Margherita" => 1,
+    "CheeseBurger" => 2,
+    "Spaghetti" => 1,
+];
+
+// echo $interestedTastesMap["Margherita"];
+// echo $interestedTastesMap["CheeseBurger"];
+// echo $interestedTastesMap["Spaghetti"];
+
+$Tom = new Customer("Tom", 20, "Saitama", $interestedTastesMap);
+
+echo $Tom->introduction();
