@@ -27,6 +27,8 @@ require_once 'src/Persons/Customers/Customer.php';
 
 // timestamp
 require_once 'src/Other/Timestamp.php';
+// inovoice
+require_once 'src/Invoices/Invoice.php';
 
 // --------------------------------------------------
 
@@ -65,10 +67,11 @@ echo $Tom->introduction();
 
 
 // $Tom->interestedCategories($saizeriya);
-echo "test";
+// echo "test";
 
-// $invoice = $Tom->order($saizeriya);
-// $invoice->printInvoice();
+$invoice = $Tom->order($saizeriya);
+$invoice->printInvoice();
+echo "test";
 
 // timestamp
 

@@ -5,9 +5,10 @@ require 'FoodItem.php';
 class CheeseBurger extends FoodItem {
     private int $cookingTime = 2;
     public function __construct() {
-        $this->name = __CLASS__;
-        $this->description = "This is CheeseBurger.";
-        $this->price = 14.0;
+        $name = __CLASS__;
+        $description = "This is CheeseBurger.";
+        $price = 14.0;
+        parent::__construct($name, $description, $price);
     }
 
     public function getCookingTime():int {

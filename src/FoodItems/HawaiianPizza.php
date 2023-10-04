@@ -1,11 +1,12 @@
 <?php
 class HawaiianPizza extends FoodItem {
-    private int $cookingTime = 20;
+    private int $cookingTime = 7;
 
     public function __construct() {
-        $this->name = __CLASS__;
-        $this->description = "This is HawaiianPizza.";
-        $this->price = 16.0;
+        $name = __CLASS__;
+        $description = "This is HawaiianPizza.";
+        $price = 16.0;
+        parent::__construct($name, $description, $price);
     }
 
     public function getCookingTime():int {

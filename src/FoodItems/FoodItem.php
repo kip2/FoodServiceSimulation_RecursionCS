@@ -7,6 +7,12 @@ abstract class FoodItem {
 
     private float $price;
 
+    public function __construct($name, $description, $price) {
+        $this->name = $name;
+        $this->description = $description;
+        $this->price = $price;
+    }
+
     public function getName() {
         return $this->name;
     }

@@ -5,9 +5,10 @@ class Spaghetti extends FoodItem {
     private int $cookingTime = 3;
 
     public function __construct() {
-        $this->name = __CLASS__;
-        $this->description = "This is Spaghetti.";
-        $this->price = 15.0;
+        $name = __CLASS__;
+        $description = "This is Spaghetti.";
+        $price = 15.0;
+        parent::__construct($name, $description, $price);
     }
 
     public function getCookingTime():int {

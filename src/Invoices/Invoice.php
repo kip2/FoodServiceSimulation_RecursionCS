@@ -15,11 +15,27 @@ class Invoice {
         $this->estimatedTimeInMinutes = 0;
     }
 
+    public function getFinalPrice() {
+        return $this->finalPrice;
+    }
+
+    public function getOrderTime() {
+        return $this->orderTime;
+    }
+
     public function addPrice(float $price) {
         $this->finalPrice += $price;
     }
 
     public function addEstimatedTimeInMinutes(int $estimatedTimeInMinutes) {
         $this->estimatedTimeInMinutes += $estimatedTimeInMinutes;
+    }
+
+    public function printInvoice() : void{
+        echo "--------------------------------------------------\n";
+        echo "Date: {$this->getOrderTime()}\n";
+        echo "Final Price: ${(string)$this->getFinalPrice()}\n";
+        echo "--------------------------------------------------\n";
+        return;
     }
 }
