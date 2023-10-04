@@ -1,10 +1,25 @@
 <?php
+
+require_once __DIR__ . '/../Other/Timestamp.php';
+
 class Invoice {
     private float $finalPrice;
 
-    // todo: Timestamp型は何で定義するのか？
     private Timestamp $orderTime;
 
-    // todo: 何をするメソッド？
     private int $estimatedTimeInMinutes;
+
+    public function __construct() {
+        $this->orderTime = new Timestamp();
+        $this->finalPrice = 0.0;
+        $this->estimatedTimeInMinutes = 0;
+    }
+
+    public function addPrice(float $price) {
+        $this->finalPrice += $price;
+    }
+
+    public function addEstimatedTimeInMinutes(int $estimatedTimeInMinutes) {
+        $this->estimatedTimeInMinutes += $estimatedTimeInMinutes;
+    }
 }
