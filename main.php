@@ -22,6 +22,7 @@ require_once 'src/FoodItems/Spaghetti.php';
 // require_once 'src/Persons/Employees/Employee.php';
 require_once 'src/Persons/Employees/Cashier.php';
 require_once 'src/Persons/Employees/Chef.php';
+require_once 'src/Restaurants/Restaurant.php';
 
 // --------------------------------------------------
 
@@ -36,7 +37,23 @@ echo $hawaiianPizza;
 echo $spaghetti;
 
 // employee test
-$Inava = new Chef("Inayah Lozano", 40, "Osaka", 1, 30);
+$Inavah = new Chef("Inayah Lozano", 40, "Osaka", 1, 30);
 $Nadia = new Cashier("Nadia Valentine", 21, "Tokyo", 1, 20);
+
+
+// restaurant
+$menu = [
+    $cheeseBurger,
+    $fettuccine,
+    $hawaiianPizza,
+    $spaghetti
+];
+
+$employees = [
+    $Inavah,
+    $Nadia
+];
+
+$saizeriya = new Restaurant($menu, $employees);
 
 echo "hello";
