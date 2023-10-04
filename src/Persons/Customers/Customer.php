@@ -32,8 +32,26 @@ class Customer extends Person {
 
     // restaurant側にorder処理を委譲
     public function order(Restaurant $restaurant): Invoice{
+        $this->printWantedToEat();
         $orderCategories = $this->interestedCategories($restaurant);
+        $this->printOrder();
         return $restaurant->order($orderCategories);
+    }
+
+    private function printWantedToEat() : void {
+        echo "{$this->name} wanted to eat ";
+        foreach ($this->interestedCategories as $key => $value) {
+            echo "{$key} ";
+        }
+        echo ".\n";
+    }
+
+    private function printOrder():void {
+        echo "{$this->name} was looking at the menu, and ordered ";
+        foreach ($this->interestedCategories as $key => $value) {
+            echo "{$key} x {$value} ";
+        }
+        echo ".\n";
     }
 
     // 自己紹介用
