@@ -1,8 +1,12 @@
 <?php
 class Fettuccine extends FoodItem {
-    private float $price = 13.0;
     private int $cookingTime = 17;
 
+    public function __construct() {
+        $this->name = __CLASS__;
+        $this->description = "This is Fettuccine.";
+        $this->price = 13.0;
+    }
     public function getCookingTime():int {
         return $this->cookingTime;
     }
