@@ -11,8 +11,16 @@
 // });
 
 require 'src/FoodItems/CheeseBurger.php';
+require 'src/FoodItems/Fettuccine.php';
+require 'src/FoodItems/HawaiianPizza.php';
+require 'src/FoodItems/Spaghetti.php';
 
-// $cheeseBurger = new \FoodItems\CheeseBurger();
 $cheeseBurger = new CheeseBurger();
+$fettuccine = new Fettuccine();
+$hawaiianPizza = new HawaiianPizza();
+$spaghetti = new Spaghetti();
 
 echo $cheeseBurger;
+echo $fettuccine;
+echo $hawaiianPizza;
+echo $spaghetti;

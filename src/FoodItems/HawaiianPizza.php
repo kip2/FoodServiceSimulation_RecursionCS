@@ -1,5 +1,5 @@
 <?php
-class HawiianPizza extends FoodItem {
+class HawaiianPizza extends FoodItem {
 
     // todo: 中身は何がいる？
     public function __toString(){
