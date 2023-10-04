@@ -9,8 +9,8 @@ class Invoice {
 
     private int $estimatedTimeInMinutes;
 
-    public function __construct() {
-        $this->orderTime = new Timestamp();
+    public function __construct(Timestamp $timestamp) {
+        $this->orderTime = $timestamp;
         $this->finalPrice = 0.0;
         $this->estimatedTimeInMinutes = 0;
     }
