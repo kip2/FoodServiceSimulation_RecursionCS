@@ -17,7 +17,12 @@ class Customer extends Person {
 
     }
 
-    // 食べたいものからレストランで注文したいメニューを生成する
+    /**
+     * 食べたいものからレストランで注文したいメニューを生成する
+     *
+     * @param Restaurant $restaurant
+     * @return array
+     */
     public function interestedCategories(Restaurant $restaurant): array {
         $orderCategories = [];
         foreach ($this->interestedCategories as $key => $value) {
@@ -30,7 +35,12 @@ class Customer extends Person {
         return $orderCategories;
     }
 
-    // restaurant側にorder処理を委譲
+    /**
+     * restaurantにorder処理を委譲
+     *
+     * @param Restaurant $restaurant
+     * @return Invoice
+     */
     public function order(Restaurant $restaurant): Invoice{
         $this->printWantedToEat();
         $orderCategories = $this->interestedCategories($restaurant);
@@ -38,6 +48,11 @@ class Customer extends Person {
         return $restaurant->order($orderCategories);
     }
 
+    /**
+     * 食べたいものをprint
+     *
+     * @return void
+     */
     private function printWantedToEat() : void {
         echo "{$this->name} wanted to eat ";
         foreach ($this->interestedCategories as $key => $value) {
@@ -46,6 +61,11 @@ class Customer extends Person {
         echo ".\n";
     }
 
+    /**
+     * orderをprint
+     *
+     * @return void
+     */
     private function printOrder():void {
         echo "{$this->name} was looking at the menu, and ordered ";
         foreach ($this->interestedCategories as $key => $value) {
@@ -55,7 +75,12 @@ class Customer extends Person {
     }
 
     // 自己紹介用
-    public function introduction() {
+    /**
+     * 自己紹介用文字列を返す
+     *
+     * @return string
+     */
+    public function introduction() :string{
         $return_string = "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. ";
 
         $return_string .= "My interestedCategories is [ ";
@@ -70,8 +95,12 @@ class Customer extends Person {
         return $return_string;
     }
 
-    // 名前を文字列で返す
-    public function __toString(){
+    /**
+     * nameを返す
+     *
+     * @return string
+     */
+    public function __toString(): string{
         return $this->getName();
     }
 
