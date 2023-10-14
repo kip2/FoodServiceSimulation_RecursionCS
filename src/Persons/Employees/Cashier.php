@@ -27,7 +27,7 @@ class Cashier extends Employee {
     }
     
     /**
-     * 領収書を生成
+     * 請求書を生成
      *
      * @param FoodOrder $order
      * @return Invoice
