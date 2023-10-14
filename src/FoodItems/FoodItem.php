@@ -4,9 +4,7 @@ namespace FoodItems;
 
 abstract class FoodItem {
     private string $name;
-    // 説明
     private string $description;
-
     private float $price;
 
     public function __construct($name, $description, $price) {
@@ -15,15 +13,30 @@ abstract class FoodItem {
         $this->price = $price;
     }
 
-    public function getName() {
+    /**
+     * name getter
+     *
+     * @return string
+     */
+    public function getName(): string {
         return $this->name;
     }
 
-    public function getDescription() {
+    /**
+     * description getter
+     *
+     * @return string
+     */
+    public function getDescription() :string{
         return $this->description;
     }
 
-    public function getPrice() {
+    /**
+     * price getter
+     *
+     * @return float
+     */
+    public function getPrice() :float{
         return $this->price;
     }
 
