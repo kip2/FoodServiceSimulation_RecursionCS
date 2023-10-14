@@ -18,22 +18,21 @@ class Invoice {
         $this->estimatedTimeInMinutes = 0;
     }
 
-    public function getFinalPrice() {
-        return $this->finalPrice;
-    }
-
-    public function getOrderTime() {
-        return $this->orderTime->getTime();
-    }
-
-    public function addPrice(float $price) {
-        $this->finalPrice += $price;
-    }
-
-    public function addEstimatedTimeInMinutes(int $estimatedTimeInMinutes) {
+    /**
+     * estimatedTimeInMinutesに時間を追加
+     *
+     * @param integer $estimatedTimeInMinutes
+     * @return void
+     */
+    public function addEstimatedTimeInMinutes(int $estimatedTimeInMinutes) :void{
         $this->estimatedTimeInMinutes += $estimatedTimeInMinutes;
     }
 
+    /**
+     * Invoiceの内容をprint
+     *
+     * @return void
+     */
     public function printInvoice() : void{
         $date = $this->getOrderTime();
         $price = $this->getFinalPrice();
@@ -44,5 +43,34 @@ class Invoice {
                 $date,
                 number_format($price, 2),
                 $hr);
+    }
+
+    /**
+     * finalPrice getter
+     *
+     * @return float
+     */
+    public function getFinalPrice() : float{
+        return $this->finalPrice;
+    }
+
+    /**
+     * orderTime getter
+     *
+     * @return string
+     */
+    public function getOrderTime(): string {
+        return $this->orderTime->getTime();
+    }
+
+
+    /**
+     * finalPriceにpriceを追加
+     *
+     * @param float $price
+     * @return void
+     */
+    public function addPrice(float $price) :void{
+        $this->finalPrice += $price;
     }
 }
