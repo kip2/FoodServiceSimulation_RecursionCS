@@ -13,15 +13,30 @@ abstract class Person {
         $this->address = $address;
     }
 
-    public function getName() {
+    /**
+     * name getter
+     *
+     * @return string
+     */
+    public function getName() :string{
         return $this->name;
     }
 
-    public function getAge() {
+    /**
+     * age getter
+     *
+     * @return integer
+     */
+    public function getAge() :int{
         return $this->age;
     }
 
-    public function getAddress() {
+    /**
+     * address getter
+     *
+     * @return string
+     */
+    public function getAddress():string {
         return $this->address;
     }
 }
