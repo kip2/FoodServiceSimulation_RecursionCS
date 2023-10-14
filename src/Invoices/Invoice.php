@@ -34,10 +34,12 @@ class Invoice {
     public function printInvoice() : void{
         $date = $this->getOrderTime();
         $price = $this->getFinalPrice();
-        echo "--------------------------------------------------\n";
-        echo "Date: {$date}\n";
-        echo "Final Price: \$", number_format($price, 2), "\n";
-        echo "--------------------------------------------------\n";
-        return;
+        $hr = "--------------------------------------------------\n";
+
+        printf("%sDate: {%s}\nFinal Price: %s\n%s ",
+                $hr,
+                $date,
+                number_format($price, 2),
+                $hr);
     }
 }
