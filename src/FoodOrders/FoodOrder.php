@@ -17,7 +17,12 @@ class FoodOrder {
         $this->orderTime = new Timestamp();
     }
 
-    // 文字列型の配列からFoodItemクラスのインスタンスを格納する
+    /**
+     * 文字列の配列から、FoodItemクラスのインスタンスをitemsに格納する
+     *
+     * @param array $items
+     * @return void
+     */
     private function setItemArray(array $items) :void{
         foreach($items as $item) {
             $fullClassName = "FoodItems\\" . $item;
@@ -25,10 +30,18 @@ class FoodOrder {
         }
     }
     
+    /**
+     * items getter
+     *
+     * @return array
+     */
     public function getItems():array {
         return $this->items;
     }
 
+    /**
+     * orderTime getter
+     */
     public function getOrderTime(): Timestamp{
         return $this->orderTime;
     }
