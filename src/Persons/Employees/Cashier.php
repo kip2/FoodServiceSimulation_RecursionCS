@@ -13,13 +13,25 @@ class Cashier extends Employee {
         parent::__construct($name, $age, $address, $employeeID, $salary);
     }
 
-    // orderを受け取り、注文票を返す
+    /**
+     * Orderを受け取り、注文票を返す
+     *
+     * @param Restaurant $restaurant
+     * @param array $categories
+     * @return FoodOrder
+     */
     public function generateOrder(Restaurant $restaurant , array $categories ) : FoodOrder {
         echo "{$this->getName()} received the order.\n";
         $order = new FoodOrder($categories);
         return $order;
     }
     
+    /**
+     * 領収書を生成
+     *
+     * @param FoodOrder $order
+     * @return Invoice
+     */
     public function generateInvoice(FoodOrder $order): Invoice{
 
         // invoice発行開始
@@ -37,20 +49,31 @@ class Cashier extends Employee {
         return $invoice;
     }
 
-
-    // 説明用のクラス
+    /**
+     * 説明用文章を生成
+     *
+     * @return string
+     */
     public function introduction() :string {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }
 
-    // クラスネームを返す
-    public function getClassName() {
+    /**
+     * 完全修飾名からクラス名を取り出す
+     *
+     * @return string
+     */
+    public function getClassName() :string{
         $tmp =  explode('\\', __CLASS__);
         return end($tmp);
     }
 
-    // 名前を返す
-    public function __toString(){
+    /**
+     * nameを返す
+     *
+     * @return string
+     */
+    public function __toString():string{
         return $this->getName();
     }
 }

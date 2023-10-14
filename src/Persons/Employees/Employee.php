@@ -16,16 +16,30 @@ class Employee extends Person {
 
     }
 
-    public function getEmployeeID() {
+    /**
+     * employeeID getter
+     *
+     * @return integer
+     */
+    public function getEmployeeID() :int{
         return $this->employeeID;
     }
 
-    public function getSalary() {
+    /**
+     * salary getter
+     *
+     * @return float
+     */
+    public function getSalary() :float{
         return $this->salary;
     }
 
-    // 名前を返す
-    public function __toString(){
+    /**
+     * nameを返す
+     *
+     * @return string
+     */
+    public function __toString():string{
         return $this->getName();
     }
 }

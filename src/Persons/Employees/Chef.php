@@ -12,7 +12,12 @@ class Chef extends Employee {
         parent::__construct($name, $age, $address, $employeeID, $salary);
     }
 
-    // 調理をして、かかった時間を報告する
+    /**
+     * 調理をして、かかった時間を報告する
+     *
+     * @param FoodOrder $order
+     * @return string
+     */
     public function prepareFood(FoodOrder $order): string {
         $totalTime = 0;
         foreach ($order->getItems() as $item) {
@@ -22,18 +27,30 @@ class Chef extends Employee {
         return "{$this->name} took {$totalTime} minutes to cook.\n";
     }
 
-    // 自己紹介用
+    /**
+     * 説明用文章を生成
+     *
+     * @return string
+     */
     public function introduction() :string {
         return "Hi, I'm {$this->getName()}. My age is {$this->getAge()}. My address is {$this->getAddress()}. My ID is {$this->getEmployeeID()}. My salary is {$this->getSalary()}.\n";
     }
 
-    // クラスネームを返す
-    public function getClassName() {
+    /**
+     * 完全修飾名からクラス名を取り出す
+     *
+     * @return string
+     */
+    public function getClassName() :string{
         $tmp =  explode('\\', __CLASS__);
         return end($tmp);
     }
 
-    // 名前を返す
+    /**
+     * nameを返す
+     *
+     * @return string
+     */
     public function __toString(): string{
         return $this->getName();
     }
