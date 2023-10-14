@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../Person.php';
+namespace Persons\Employees;
+
+use Persons\Person;
 
 class Employee extends Person {
     protected int $employeeID;

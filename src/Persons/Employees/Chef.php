@@ -1,7 +1,10 @@
 <?php
-// namespace FoodService;
 
-require_once __DIR__ . '/Employee.php';
+namespace Persons\Employees;
+
+use Persons\Employees\Employee;
+use FoodOrders\FoodOrder;
+
 
 class Chef extends Employee {
 
@@ -25,8 +28,9 @@ class Chef extends Employee {
     }
 
     // クラスネームを返す
-    public function getClassName() : string {
-        return __CLASS__;
+    public function getClassName() {
+        $tmp =  explode('\\', __CLASS__);
+        return end($tmp);
     }
 
     // 名前を返す

@@ -1,10 +1,10 @@
 <?php
 
-// namespace Person;
-// namespace FoodService;
+namespace Persons\Customers;
 
-require_once __DIR__ . '/../Person.php';
-require_once __DIR__ . '/../../Invoices/Invoice.php';
+use Persons\Person;
+use Restaurants\Restaurant;
+use Invoices\Invoice;
 
 class Customer extends Person {
     private $interestedCategories;

@@ -1,6 +1,9 @@
 <?php
 
-require_once __DIR__ . '/../Other/Timestamp.php';
+namespace Invoices;
+
+use Other\Timestamp;
+
 
 class Invoice {
     private float $finalPrice;

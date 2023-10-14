@@ -1,5 +1,7 @@
 <?php
 
+namespace Other;
+
 class Timestamp {
     // インスタンス生成時の時刻を保持
     protected int $generated_time;

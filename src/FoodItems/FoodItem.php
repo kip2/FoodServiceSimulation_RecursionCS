@@ -1,5 +1,7 @@
 <?php
 
+namespace FoodItems;
+
 abstract class FoodItem {
     private string $name;
     // 説明
@@ -25,6 +27,4 @@ abstract class FoodItem {
         return $this->price;
     }
 
-    // public static function getCategory() {
-    // }
 }

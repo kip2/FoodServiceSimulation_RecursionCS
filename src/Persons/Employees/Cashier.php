@@ -1,8 +1,11 @@
 <?php
 
-// namespace FoodService;
+namespace Persons\Employees;
 
-require_once __DIR__ . '/Employee.php';
+use Persons\Employees\Employee;
+use FoodOrders\FoodOrder;
+use Restaurants\Restaurant;
+use Invoices\Invoice;
 
 class Cashier extends Employee {
 
@@ -42,7 +45,8 @@ class Cashier extends Employee {
 
     // クラスネームを返す
     public function getClassName() {
-        return __CLASS__;
+        $tmp =  explode('\\', __CLASS__);
+        return end($tmp);
     }
 
     // 名前を返す

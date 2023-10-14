@@ -1,7 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../Other/Timestamp.php';
-require_once __DIR__ . '/../FoodItems/FoodItem.php';
+namespace FoodOrders;
+
+use FoodItems\FoodItem;
+
+use Other\Timestamp;
 
 class FoodOrder {
     /** @var FoodItem[]  */
@@ -17,7 +20,8 @@ class FoodOrder {
     // 文字列型の配列からFoodItemクラスのインスタンスを格納する
     private function setItemArray(array $items) :void{
         foreach($items as $item) {
-            array_push($this->items, new $item());
+            $fullClassName = "FoodItems\\" . $item;
+            array_push($this->items, new $fullClassName());
         }
     }
     

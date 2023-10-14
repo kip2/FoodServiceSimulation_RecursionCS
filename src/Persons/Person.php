@@ -1,6 +1,6 @@
 <?php
 
-// namespace FoodService;
+namespace Persons;
 
 abstract class Person {
     protected string $name;

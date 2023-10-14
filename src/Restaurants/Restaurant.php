@@ -1,10 +1,13 @@
 <?php
 
-require_once __DIR__ . '/../Invoices/Invoice.php';
-require_once __DIR__ . '/../FoodOrders/FoodOrder.php';
-require_once __DIR__ . '/../Persons/Employees/Employee.php';
-require_once __DIR__ . '/../Persons/Employees/Cashier.php';
-require_once __DIR__ . '/../Persons/Employees/Chef.php';
+namespace Restaurants;
+
+use Invoices\Invoice;
+use FoodItems\FoodItem;
+use Persons\Employees\Cashier;
+use Persons\Employees\Employee;
+use Persons\Employees\Chef;
+
 
 class Restaurant {
     /** @var FoodItem[] */
@@ -66,6 +69,7 @@ class Restaurant {
                 return $employee;
             }
         }
+        return new Chef("", 0, "", 0, 0);
     }
 
     // 従業員リストの先頭にいるレジ係を呼ぶ
@@ -75,6 +79,7 @@ class Restaurant {
                 return $employee;
             }
         }
+        return new Cashier("", 0, "", 0, 0);
     }
 
     // menuの中にあるかどうかを判定
