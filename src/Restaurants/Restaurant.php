@@ -21,8 +21,12 @@ class Restaurant {
         $this->employees = $employees;
     }
 
-    // 自己紹介用
-    public function introduction() {
+    /**
+     * 紹介用文章を作成
+     *
+     * @return string
+     */
+    public function introduction() :string{
         $return_string = "Hi, menu are [ ";
 
         // メニューを連結する
@@ -43,7 +47,10 @@ class Restaurant {
     }
 
     /**
+     * 注文を処理し、請求書を発行
+     *
      * @psalm-param array<string, int> $categories
+     * @return Invoice
      */
     public function order(array $categories): Invoice{
 
@@ -62,27 +69,42 @@ class Restaurant {
     }
 
 
-    // 従業員リストの先頭にいるシェフを呼びだす
+    /**
+     * 従業員リストの先頭にいるレジ係を返す
+     *
+     * @return Chef
+     */
     private function getChef() : Chef{
         foreach ($this->employees as $employee) {
             if ($employee->getClassName() == "Chef") {
                 return $employee;
             }
         }
+        // エラーを避けるため
         return new Chef("", 0, "", 0, 0);
     }
 
-    // 従業員リストの先頭にいるレジ係を呼ぶ
+    /**
+     * 従業員リストの先頭にいるレジ係を返す
+     *
+     * @return Cashier
+     */
     private function getCashier(): Cashier{
         foreach ($this->employees as $employee) {
             if ($employee->getClassName() == "Cashier") {
                 return $employee;
             }
         }
+        // エラーを避けるため
         return new Cashier("", 0, "", 0, 0);
     }
 
-    // menuの中にあるかどうかを判定
+    /**
+     * $categoryがmenuに存在するかを判定
+     *
+     * @param string $category
+     * @return boolean
+     */
     public function hasMenu(string $category): bool {
         foreach($this->menus as $menu) {
             if ($menu == $category) {
@@ -92,8 +114,12 @@ class Restaurant {
         return False;
     }
 
-    // クラスネームを文字列で返す
-    public function __toString(){
+    /**
+     * 完全修飾名を文字列で返す
+     *
+     * @return string
+     */
+    public function __toString():string{
         return __CLASS__;
     }
 
